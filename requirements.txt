@@ -1,0 +1,7 @@
+numpy
+matplotlib
+pandas
+scikit-maad
+scipy
+librosa
+pathlib
