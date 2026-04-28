@@ -9,7 +9,7 @@ nTEMPI can be used by downloading the code from source. From a terminal, procedu
 
 First, clone repository and make sure all required packages are installed.
 ```bash
-$ git clone https://github.com/nathan-line/ntempi.git
+$ git clone https://github.com/ear-team/nTEMPI.git
 $ pip install -r requirements.txt
 ```
 
