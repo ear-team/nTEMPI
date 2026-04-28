@@ -78,11 +78,9 @@ They are imported via the _dependencies.py_ file.
 
 ## Test dataset
 
-It consists in 5 audio recordings from the Risoux forest in Haut-Jura, presenting a diversity in the number of vocalizing species. Corresponding spectrograms are presented below.
+It consists in 1 audio recording from the Risoux forest in Haut-Jura, presenting a diversity in the number of vocalizing species.
 
-<div align="center">
-    <img src="illustrations/test-spectrograms.png" alt="spectrograms"/>
-</div>
+
   
 
 ## Parameters
