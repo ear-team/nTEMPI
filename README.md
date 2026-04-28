@@ -1,11 +1,11 @@
-# NTempi
+# nTEMPI
 
-**NTempi** (Number of tempi) is an acoustic index designed for orthoptera acoustic richness estimation.  It aims at counting the number of distinct stridulation tempi within a given audio file. 
+**nTEMPI** (Number of tempi) is an acoustic index designed for orthoptera acoustic richness estimation.  It aims at counting the number of distinct stridulation tempi within a given audio file. 
 
 
 ## How to use
 
-NTempi can be used by downloading the code from source. From a terminal, procedure is as follows:
+nTEMPI can be used by downloading the code from source. From a terminal, procedure is as follows:
 
 First, clone repository and make sure all required packages are installed.
 ```bash
@@ -22,7 +22,7 @@ $ python3 tests.py
 After a short time, the script should print the following: 'Tests worked as intended!'.
 
 
-To compute the NTempi index on 
+To compute the nTEMPI index on 
 * A given audio file at _file\_path_:
 ```bash
 $ python3 NTempi.py file_path
@@ -41,7 +41,7 @@ Orthoptera is an order of the insect class, regrouping both grasshoppers and bus
 
 ## Functional description
 
-NTempi index takes as input an audio file and returns a single value. It works as a proxy for acoustic richness (in a one-one correlation fashion) and has proven to be relatively robust to multiple percussive sources, potentially overlapping. Detailed workflow is as follows:
+nTEMPI index takes as input an audio file and returns a single value. It works as a proxy for acoustic richness (in a one-one correlation fashion) and has proven to be relatively robust to multiple percussive sources, potentially overlapping. Detailed workflow is as follows:
   
 
 <div align="center">
@@ -49,7 +49,7 @@ NTempi index takes as input an audio file and returns a single value. It works a
 </div>
   
 
-(a) **Segmentation**: First step of the Ntempi computation consists in dividing the audio file into smaller segments of equal length, in order to work on each one of those separately.
+(a) **Segmentation**: First step of the nTEMPI computation consists in dividing the audio file into smaller segments of equal length, in order to work on each one of those separately.
 
 (b) **Band separation**: Spectrum is first smoothed with a running mean method. Peaks in the smoothed spectrum, corresponding to frequency bins of highest energy, are then identified using a peak detection technique (absolute thresholding and prominence).The obtained points are finally exploited to isolate bands of interest, with a fixed bandwidth around them.
 
@@ -58,12 +58,12 @@ NTempi index takes as input an audio file and returns a single value. It works a
 (d) **Tempo identification**: Peak in the temprums are then identified using another detection technique combining relative thresholding and prominence. Harmonics are removed, within an epsilon error margin.
 
 (e) **Final computation**: Tempi obtained from all temporal segments and all frequency bands are
-gathered together using distinct union with a delta margin. This results in a list of all tempi, the Ntempi acoustic index then returns the length of this list. 
+gathered together using distinct union with a delta margin. This results in a list of all tempi, the nTEMPI acoustic index then returns the length of this list. 
 
 
 ## Code structure and dependencies
 
-_NTempi_ code is separated into several parts, making use of auxiliary functions defined in the _aux\_files_ folder. Each auxiliary file corresponds to a particular part of the workflow described above, namely :
+_nTEMPI_ code is separated into several parts, making use of auxiliary functions defined in the _aux\_files_ folder. Each auxiliary file corresponds to a particular part of the workflow described above, namely :
 - _band\_separation.py_ for step (b) : spectrum-based peak identification and band separation.
 - _temprums.py_ for step (c) : novelty curve computation and discretization, Fourier transform.
 - _tempo\_identification_ for step (d) : temprum-base peak identification, harmonic removal.
